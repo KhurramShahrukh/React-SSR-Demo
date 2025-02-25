@@ -1,1 +1,1 @@
-## React SSR Demo for enhanced SEO.
+React SSR Demo for enhanced SEO.
