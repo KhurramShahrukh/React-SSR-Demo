@@ -1,7 +1,9 @@
+require("dotenv").config();
+
 const path = require("path");
 
 module.exports = {
-  mode: "development",
+  mode: process.env.NODE_ENV || "production",
   entry: "./src/client.js", // Entry point for the client-side app
   output: {
     path: path.resolve(__dirname, "public"), // Output directory
@@ -23,5 +25,9 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx"], // Resolve JS and JSX files
+  },
+  optimization: {
+    usedExports: true, // Mark unused exports for tree shaking
+    minimize: true, // Minify the output
   },
 };
